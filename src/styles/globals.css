@@ -75,7 +75,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-esthete_cream text-foreground text-gold1;
     font-feature-settings: 'rlig' 1, 'calt' 1;
   }
 }

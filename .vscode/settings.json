@@ -1,4 +1,14 @@
 {
+  "files.autoSave": "afterDelay",
+  "editor.fontSize": 16,
+  "terminal.integrated.fontFamily": "AnonymicePro Nerd Font",
+  "editor.fontFamily": "AnonymicePro Nerd Font",
+  "terminal.integrated.fontSize": 16,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.wordWrap": "on",
+  "git.autoRepositoryDetection": false,
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "typescript.enablePromptUseWorkspaceTsdk": true
 }
