@@ -30,6 +30,7 @@ export default function RootLayout({
                 <Providers>
                     {/* @ts-expect-error Server Component*/}
                     <Navbar />
+                    
                     {authModal}
 
                     <div className="container max-w-7xl mx-auto h-full pt-12">
