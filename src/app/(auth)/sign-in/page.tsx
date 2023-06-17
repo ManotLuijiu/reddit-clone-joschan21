@@ -1,6 +1,7 @@
 import SignIn from '@/components/SignIn/SignIn';
 import { buttonVariants } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
+import { ChevronLeft } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 
@@ -17,7 +18,7 @@ const page: React.FC<pageProps> = () => {
                         'self-start text-gold1 -mt-20',
                     )}
                 >
-                    กลับหน้าหลัก
+                  <ChevronLeft className='mr-2 h-4 w-4' />  กลับหน้าหลัก
                 </Link>
                 <SignIn />
             </div>
