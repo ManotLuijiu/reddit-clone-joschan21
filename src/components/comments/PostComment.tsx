@@ -105,6 +105,7 @@ const PostComment: React.FC<PostCommentProps> = ({
           }}
           variant="ghost"
           size="xs"
+          className="text-gold1"
         >
           <MessageSquare className="h-4 w-4 mr-1.5" />
           ตอบรับ
