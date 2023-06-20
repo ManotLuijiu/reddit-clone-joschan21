@@ -1,13 +1,14 @@
-import { getAuthSession } from '@/lib/auth';
+import { authOptions } from '@/lib/auth';
+import { getServerSession } from 'next-auth';
 import Link from 'next/link';
 import React from 'react';
-import UserAccountNav from './UserAccountNav';
-
+import UserAccountNav from '../UserAccountNav';
+import SearchBar from '../SearchBar';
 import { buttonVariants } from '../ui/Button';
 import { Icons } from './Icons';
 
 const Navbar = async () => {
-    const session = await getAuthSession();
+    const session = await getServerSession(authOptions);
     // eslint-disable-next-line no-console
     console.log('session',session)
     return (
@@ -22,6 +23,9 @@ const Navbar = async () => {
                 </Link>
 
                 {/* Search bar */}
+                <SearchBar />
+
+                {/* actions */}
                 {session?.user ? (
                     <UserAccountNav user={session.user} />
                 ) : (
