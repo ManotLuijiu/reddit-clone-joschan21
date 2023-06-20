@@ -2,6 +2,7 @@
 import CustomFeed from '@/components/homepage/CustomFeed';
 import GeneralFeed from '@/components/homepage/GeneralFeed';
 import { buttonVariants } from '@/components/ui/Button';
+import { Separator } from '@/components/ui/separator';
 import { getAuthSession } from '@/lib/auth';
 import { Home as HomeIcon } from 'lucide-react';
 import Link from 'next/link';
@@ -48,6 +49,8 @@ export default async function Home() {
             >
               สร้างกะทู้ บนเอสธีทบอร์ด
             </Link>
+            {/* <Separator className='my-4' /> */}
+            <span className="mt-4 py-4 text-xs text-gray-900">สงวนลิขสิทธิ์ &copy; บริษัท เอสธีท อินเตอร์เนชั่นแนล จำกัด</span>
           </dl>
         </div>
       </div>
