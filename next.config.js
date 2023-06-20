@@ -4,7 +4,7 @@ const nextConfig = {
     domains: ['uploadthing.com', 'lh3.googleusercontent.com'],
   },
   i18n: {
-    locales: ["th", "en-US"],
+    locales: ["th"],
     defaultLocale: "th"
   },
   experimental: {
