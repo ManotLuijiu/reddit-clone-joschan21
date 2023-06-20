@@ -1,50 +1,54 @@
+import PostFeed from '@/components/PostFeed';
 import { getAuthSession } from '@/lib/auth';
 import { db } from '@/lib/db';
 import { notFound } from 'next/navigation';
 import React from 'react';
 
-import { INFINITE_SCROLLING_PAGINATION_RESULTS } from '../../../config';
 import MiniCreatePost from '../../../components/MiniCreatePost';
+import { INFINITE_SCROLL_PAGINATION_RESULTS } from '../../../config';
 
 interface PageProps {
-    params: {
-        slug: string;
-    };
+  params: {
+    slug: string;
+  };
 }
 
 const page = async ({ params }: PageProps) => {
-    const { slug } = params;
+  const { slug } = params;
 
-    const session = await getAuthSession();
+  const session = await getAuthSession();
 
-    const subreddit = await db.subreddit.findFirst({
-        where: { name: slug },
+  const subreddit = await db.subreddit.findFirst({
+    where: { name: slug },
+    include: {
+      posts: {
         include: {
-            posts: {
-                include: {
-                    author: true,
-                    votes: true,
-                    comments: true,
-                    subreddit: true,
-                },
-
-                take: INFINITE_SCROLLING_PAGINATION_RESULTS,
-            },
+          author: true,
+          votes: true,
+          comments: true,
+          subreddit: true,
         },
-    });
+        orderBy: {
+          createdAt: 'desc',
+        },
 
-    if (!subreddit) {
-        return notFound();
-    }
+        take: INFINITE_SCROLL_PAGINATION_RESULTS,
+      },
+    },
+  });
 
-    return (
-        <>
-            <h1 className="font-bold text-3xl md:text-4xl h-14">
-                เอสธีท/{subreddit.name}
-            </h1>
-            <MiniCreatePost session={session} />
-            {/* TODO: Show posts in */}
-        </>
-    );
+  if (!subreddit) {
+    return notFound();
+  }
+
+  return (
+    <>
+      <h1 className="font-bold text-3xl md:text-4xl h-14">
+        เอสธีท/{subreddit.name}
+      </h1>
+      <MiniCreatePost session={session} />
+      <PostFeed initialPosts={subreddit.posts} subredditName={subreddit.name} />
+    </>
+  );
 };
 export default page;

@@ -32,27 +32,27 @@ const UserAuthForm: React.FC<UserAuthFormProps> = ({ className, ...props }) => {
         }
     };
 
-    const loginWithFacebook = async () => {
-        setIsLoading(true);
+    // const loginWithFacebook = async () => {
+    //     setIsLoading(true);
 
-        try {
-            await signIn('facebook');
-        } catch (error) {
-            toast({
-                title: 'Error',
-                description: 'There was an error logging in whit Facebook',
-                variant: 'destructive',
-            });
-            // eslint-disable-next-line no-console
-            console.error(error);
-        } finally {
-            setIsLoading(false);
-        }
-    };
+    //     try {
+    //         await signIn('facebook');
+    //     } catch (error) {
+    //         toast({
+    //             title: 'Error',
+    //             description: 'There was an error logging in whit Facebook',
+    //             variant: 'destructive',
+    //         });
+    //         // eslint-disable-next-line no-console
+    //         console.error(error);
+    //     } finally {
+    //         setIsLoading(false);
+    //     }
+    // };
 
     return (
         <div className={cn('flex justify-center', className)} {...props}>
-            <div className="flex flex-col gap-4">
+            
 
             <Button
                 type="button"
@@ -65,7 +65,7 @@ const UserAuthForm: React.FC<UserAuthFormProps> = ({ className, ...props }) => {
                 {isLoading ? null : <Icons.google className="h-4 w-4 mr-2" />}
                 Google
             </Button>
-            <Button
+            {/* <Button
                 type="button"
                 onClick={loginWithFacebook}
                 isLoading={isLoading}
@@ -75,8 +75,7 @@ const UserAuthForm: React.FC<UserAuthFormProps> = ({ className, ...props }) => {
             >
                 {isLoading ? null : <Icons.google className="h-4 w-4 mr-2" />}
                 Facebook
-            </Button>
-            </div>
+            </Button> */}
         </div>
     );
 };
