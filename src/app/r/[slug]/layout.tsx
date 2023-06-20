@@ -67,23 +67,23 @@ const Layout = async ({
   });
 
   return (
-    <div className="sm:container max-w-7xl mx-auto h-full pt-12">
+    <div className="sm:container lg:max-w-7xl mx-auto h-full lg:pt-12">
       <div>
         <ToFeedButton />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-4 py-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-2 lg:gap-x-4 py-6">
           <ul className="flex flex-col col-span-2 space-y-6">{children}</ul>
 
           {/* info sidebar */}
           <div className="hidden md:block overflow-hidden h-fit rounded-lg border border-gold1 order-first md:order-last">
             <div className="px-6 py-4">
-              <p className="font-semibold py-3">
-                เกี่ยวกับ เอสธีท/{subreddit.name}
+              <p className="lg:font-semibold py-3">
+                <span className="italic text-sm"></span>{subreddit.name}
               </p>
             </div>
 
             <dl className="divide-y divide-gray-100 px-6 py-4 text-sm leading-6 bg-white">
-              <div className="flex justify-between gap-x-4 py-3">
+              <div className="flex justify-between lg:gap-x-4 py-3">
                 <dt className="text-gray-500">สร้างเมื่อ</dt>
                 <dd className="text-gray-700">
                   <time dateTime={subreddit.createdAt.toDateString()}>
@@ -102,7 +102,7 @@ const Layout = async ({
               {subreddit.creatorId === session?.user.id ? (
                 <div className="flex justify-between gap-x-4 py-3">
                   <dt className="text-gray-500 italic">
-                    คุณเป็นคนสร้างกะทู้นี้
+                    คุณเป็นคนสร้างกลุ่มนี้
                   </dt>
                 </div>
               ) : null}
@@ -121,7 +121,7 @@ const Layout = async ({
                   className: 'w-full mb-6',
                 })}
               >
-                สร้างกะทู้
+                สร้างกลุ่มสนทนา
               </Link>
             </dl>
           </div>

@@ -32,7 +32,7 @@ const Post:React.FC<PostProps> = ({
     
     return (
         <div className="rounded-md bg-white shadow">
-            <div className="px-6 py-4 flex justify-between">
+            <div className="px-4 py-2 md:px-6 md:py-4 flex justify-between">
                 <PostVoteClient
                 postId={post.id}
                 initialVotesAmt={_votesAmt}
@@ -55,7 +55,7 @@ const Post:React.FC<PostProps> = ({
                         {formatTimeToNow(new Date(post.createdAt))}
                     </div>
                     <a href={`/r/${subredditName}/post/${post.id}`}>
-                        <h1 className="text-lg font-semibold py-2 leading-6 text-gray-900">
+                        <h1 className="text-md md:text-lg font-semibold py-2 leading-6 text-gray-900">
                             {post.title}
                         </h1>
                     </a>

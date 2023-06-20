@@ -92,6 +92,7 @@ const RCreatePage: React.FC<pageProps> = () => {
                             className="pl-14"
                         />
                     </div>
+                    <span className="italic text-orange-700 text-[0.857rem]">หมายเหตุ: ช่วงทดสอบใช้ได้เฉพาะชื่อภาษาอังกฤษ</span>
                 </div>
 
                 <div className="flex justify-end gap-4">
