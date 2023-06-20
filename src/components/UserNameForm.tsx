@@ -54,22 +54,22 @@ const UserNameForm = ({ user, className, ...props }: UserNameFormProps) => {
       if (err instanceof AxiosError) {
         if (err.response?.status === 409) {
           return toast({
-            title: 'Username already taken.',
-            description: 'Please choose another username',
+            title: 'ชื่อนี้มีคนใช้แล้ว',
+            description: 'โปรดเปลี่ยนเป็นชื่ออื่น',
             variant: 'destructive',
           });
         }
       }
 
       return toast({
-        title: 'Something went wrong',
-        description: 'Your username was not updated. Please try again',
+        title: 'เกิดปัญหาบางอย่าง',
+        description: 'ชื่อของคุณยังไม่ได้เปลี่ยน กรุณาลองใหม่อีกครั้ง',
         variant: 'destructive',
       });
     },
     onSuccess: () => {
       toast({
-        description: 'Your username has been updated',
+        description: 'เปลี่ยนชื่อของคุณสำเร็จ',
       });
       router.refresh();
     },
@@ -83,16 +83,16 @@ const UserNameForm = ({ user, className, ...props }: UserNameFormProps) => {
     >
         <Card>
             <CardHeader>
-                <CardTitle>Your username</CardTitle>
+                <CardTitle>ชื่อของคุณ</CardTitle>
                 <CardDescription>
-                    Please enter a display name you are comfortable with.
+                    คุณสามารถเปลี่ยนชื่อผู้ใช้ได้ตามต้องการ
                 </CardDescription>
             </CardHeader>
             <CardContent>
                 <div className="relative grid gap-1">
-                    <div className="absolute top-0 left-0 w-8 h-10 grid place-items-center">
+                    <div className="absolute top-0 left-0 w-16 h-10 grid place-items-center">
                         <span className="text-sm text-zinc-400">
-                            u/
+                            ชื่อผู้ใช้/
                         </span>
                     </div>
                     <Label className='sr-only' htmlFor='name'>
@@ -100,7 +100,7 @@ const UserNameForm = ({ user, className, ...props }: UserNameFormProps) => {
                     </Label>
                     <Input
                     id="name"
-                    className='w-[400px] pl-6'
+                    className='w-[400px] pl-14'
                     size={32}
                     {...register('name')}
                     />
@@ -112,7 +112,7 @@ const UserNameForm = ({ user, className, ...props }: UserNameFormProps) => {
                 </div>
             </CardContent>
             <CardFooter>
-                <Button isLoading={isLoading}>Change name</Button>
+                <Button isLoading={isLoading}>เปลี่ยนชื่อผู้ใช้</Button>
             </CardFooter>
         </Card>
     </form>

@@ -23,7 +23,7 @@ const renderers = {
 const style = {
   paragraph: {
     fontSize: '0.875rem',
-    lineHeight: '1.25rem',
+    lineHeight: '1.675rem',
   },
 };
 

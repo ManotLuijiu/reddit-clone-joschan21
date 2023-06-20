@@ -8,6 +8,9 @@ import { notFound } from 'next/navigation';
 const CustomFeed = async () => {
     const session = await getAuthSession()
 
+    // eslint-disable-next-line no-console
+    console.log('session in CustomFeed',session)
+
     // only rendered if session exists, so this will not happen
     if (!session) return notFound()
 

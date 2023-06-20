@@ -19,7 +19,7 @@ const SettingsPage = async () => {
   return (
     <div className="max-w-4xl mx-auto py-12">
       <div className="grid items-start gap-8">
-        <h1 className="font-bold text-3xl md:text-4xl">Settings</h1>
+        <h1 className="font-bold text-3xl md:text-4xl">การตั้งค่า</h1>
 
         <div className="grid gap-10">
           <UserNameForm

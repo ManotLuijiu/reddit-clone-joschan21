@@ -39,8 +39,8 @@ const CreateComment: React.FC<CreateCommentProps> = ({ postId, replyToId }) => {
       }
 
       return toast({
-        title: 'Something went wrong.',
-        description: "Comment wasn't created successfully. Please try again.",
+        title: 'เกิดปัญหาบางอย่าง',
+        description: "ไม่สามารถบันทึกความเห็นของคุณได้ โปรดลองอีกครั้ง",
         variant: 'destructive',
       });
     },
@@ -52,14 +52,14 @@ const CreateComment: React.FC<CreateCommentProps> = ({ postId, replyToId }) => {
 
   return (
     <div className="grid w-full gap-1.5">
-      <Label htmlFor="comment">Your comment</Label>
+      <Label htmlFor="comment">ความเห็นของคุณ</Label>
       <div className="mt-2">
         <Textarea
           id="comment"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           rows={1}
-          placeholder="What are your thoughts?"
+          placeholder="คุณคิดว่าอย่างไรกับเรื่องนี้"
         />
 
         <div className="mt-2 flex justify-end">
@@ -68,7 +68,7 @@ const CreateComment: React.FC<CreateCommentProps> = ({ postId, replyToId }) => {
             disabled={input.length === 0}
             onClick={() => comment({ postId, text: input, replyToId })}
           >
-            Post
+            โพสต์
           </Button>
         </div>
       </div>

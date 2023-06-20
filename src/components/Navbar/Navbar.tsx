@@ -17,7 +17,7 @@ const Navbar = async () => {
                 {/* Logo */}
                 <Link href="/" className="flex gap-2 items-center">
                     <Icons.logo />
-                    <p className="hidden text-gray-50 text-sm font-medium md:block">
+                    <p className="hidden text-gray-50 text-[2rem] font-medium md:block">
                         กระดานสนทนา
                     </p>
                 </Link>

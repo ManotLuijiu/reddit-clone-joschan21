@@ -83,13 +83,13 @@ const RCreatePage: React.FC<pageProps> = () => {
                     </p>
 
                     <div className="relative mt-2">
-                        <p className="absolute text-sm left-0 w-8 inset-y-0 grid place-items-center">
-                            r/
+                        <p className="absolute text-sm left-0 w-16 inset-y-0 grid place-items-center">
+                            เอสธีท/
                         </p>
                         <Input
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
-                            className="pl-6"
+                            className="pl-14"
                         />
                     </div>
                 </div>

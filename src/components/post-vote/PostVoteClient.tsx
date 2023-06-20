@@ -19,11 +19,11 @@ interface PostVoteClientProps {
   initialVote?: VoteType | null;
 }
 
-const PostVoteClient: React.FC<PostVoteClientProps> = ({
+const PostVoteClient = ({
   postId,
   initialVotesAmt,
   initialVote,
-}) => {
+}: PostVoteClientProps) => {
   const { loginToast } = useCustomToasts();
   const [votesAmt, setVotesAmt] = useState<number>(initialVotesAmt);
   const [currentVote, setCurrentVote] = useState(initialVote);
@@ -57,8 +57,8 @@ const PostVoteClient: React.FC<PostVoteClientProps> = ({
       }
 
       return toast({
-        title: 'Something went wrong.',
-        description: 'Your vote was not registered. Please try again.',
+        title: 'เกิดปัญหาบางอย่าง',
+        description: 'โหวตของคุณยังไม่ได้บันทึก โปรดลองใหม่อีกครั้ง',
         variant: 'destructive',
       });
     },
@@ -81,7 +81,11 @@ const PostVoteClient: React.FC<PostVoteClientProps> = ({
   return (
     <div className="flex flex-col gap-4 sm:gap-0 pr-6 sm:w-20 pb-4 sm:pb-0">
       {/* upvote */}
-      <Button>
+      <Button
+      onClick={() => vote('UP')}
+      size='sm'
+      variant="ghost"
+      aria-label='upvote'>
         <ArrowBigUp
           className={cn('h-5 w-5 text-zinc-700', {
             'text-emerald-500 fill-emerald-500': currentVote === 'UP',
@@ -102,7 +106,7 @@ const PostVoteClient: React.FC<PostVoteClientProps> = ({
           'text-emerald-500': currentVote === 'DOWN',
         })}
         variant="ghost"
-        aria-label="upvote"
+        aria-label="downvote"
       >
         <ArrowBigDown
           className={cn('h-5 w-5 text-zinc-700', {

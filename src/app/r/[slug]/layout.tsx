@@ -121,7 +121,7 @@ const Layout = async ({
                   className: 'w-full mb-6',
                 })}
               >
-                Create Post
+                สร้างกะทู้
               </Link>
             </dl>
           </div>

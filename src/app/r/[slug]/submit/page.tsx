@@ -22,13 +22,13 @@ const SubmitPage = async ({ params }: pageProps) => {
   return (
     <div className="flex flex-col items-start gap-6">
       {/* heading */}
-      <div className="border-b border-gray-200 pb-5">
+      <div className="border-b border-gold1 pb-5">
         <div className="-ml-2 -mt-2 flex flex-wrap items-baseline">
           <h3 className="ml-2 mt-2 text-base font-semibold leading-6 text-gray-900">
-            Create Post
+            สร้างกะทู้
           </h3>
           <p className="ml-2 mt-1 truncate text-sm text-gray-500">
-            in r/{params.slug}
+            ใน <span className="italic">เอสธีท</span>/{params.slug}
           </p>
         </div>
       </div>
@@ -38,7 +38,7 @@ const SubmitPage = async ({ params }: pageProps) => {
 
       <div className="w-full flex justify-end">
         <Button type="submit" className="w-full" form="subreddit-post-form">
-          Post
+          โพสต์
         </Button>
       </div>
     </div>

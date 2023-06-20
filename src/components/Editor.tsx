@@ -65,7 +65,7 @@ const Editor: React.FC<EditorProps> = ({ subredditId }) => {
       router.refresh();
 
       return toast({
-        description: 'Your post has been published.',
+        description: 'คุณโพสต์สำเร็จ',
       });
     },
   });
@@ -87,7 +87,7 @@ const Editor: React.FC<EditorProps> = ({ subredditId }) => {
         onReady() {
           ref.current = editor;
         },
-        placeholder: 'Type here to write your post...',
+        placeholder: 'พิมพ์เนื้อหาตรงนี้...',
         inlineToolbar: true,
         data: { blocks: [] },
         tools: {
@@ -131,7 +131,7 @@ const Editor: React.FC<EditorProps> = ({ subredditId }) => {
       for (const [_key, value] of Object.entries(errors)) {
         value;
         toast({
-          title: 'Something went wrong.',
+          title: `${_key} เกิดปัญหาบางอย่าง กรุณาแจ้ง manotlj@outlook.com`,
           description: (value as { message: string }).message,
           variant: 'destructive',
         });
@@ -197,16 +197,16 @@ const Editor: React.FC<EditorProps> = ({ subredditId }) => {
               _titleRef.current = e;
             }}
             {...rest}
-            placeholder="Title"
-            className="w-full resize-none appearance-none overflow-hidden bg-transparent text-5xl font-bold focus:outline-none"
+            placeholder="ชื่อเรื่อง"
+            className="w-full resize-none appearance-none overflow-hidden bg-transparent text-4xl pt-4 font-bold focus:outline-none"
           />
           <div id="editor" className="min-h-[500px]" />
           <p className="text-sm text-gray-500">
-            Use{' '}
+            กดปุ่ม{' '}
             <kbd className="rounded-md border bg-muted px-1 text-xs uppercase">
               Tab
             </kbd>{' '}
-            to open the command menu.
+            เพื่อเปิดดูคำสั่งเพิ่มเติม
           </p>
         </div>
       </form>

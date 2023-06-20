@@ -46,12 +46,12 @@ const Post:React.FC<PostProps> = ({
                             <a
                             className="underline text-zinc-900 text-sm underline-offset-2"
                             href={`/r/${subredditName}`}>
-                                r/{subredditName}
+                                <span className="italic">เอสธีท</span>/{subredditName}
                             </a>
                             <span className='px-1'>•</span>
                             </>
                         ): null}
-                        <span>Posted by u/{post.author.username}</span>{' '}
+                        <span>โพสต์โดย ชื่อผู้ใช้/{post.author.username}</span>{' '}
                         {formatTimeToNow(new Date(post.createdAt))}
                     </div>
                     <a href={`/r/${subredditName}/post/${post.id}`}>
@@ -74,7 +74,7 @@ const Post:React.FC<PostProps> = ({
                 <Link href={`/r/${subredditName}/post/${post.id}`}
                 className="w-fit flex items-center gap-2"
                 >
-                <MessageSquare className="h-4 w-4" /> {commentAmt} comments
+                <MessageSquare className="h-4 w-4" /> {commentAmt} ความเห็น
                 </Link>
             </div>
         </div>

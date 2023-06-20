@@ -42,13 +42,13 @@ const UserAccountNav = ({ user }: UserAccountNavProps) => {
         <DropdownMenuSeparator />
 
         <DropdownMenuItem asChild>
-          <Link href="/">Feed</Link>
+          <Link href="/">ดูข้อมูล</Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
-          <Link href="/r/create">Create Community</Link>
+          <Link href="/r/create">สร้างกลุ่มสนทนา</Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
-          <Link href="/settings">Settings</Link>
+          <Link href="/settings">ตั้งค่า</Link>
         </DropdownMenuItem>
 
         <DropdownMenuSeparator />
@@ -62,7 +62,7 @@ const UserAccountNav = ({ user }: UserAccountNavProps) => {
             });
           }}
         >
-          Sign out
+          ออกจากระบบ
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

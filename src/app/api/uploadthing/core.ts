@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { getToken } from 'next-auth/jwt';
 import { type FileRouter, createUploadthing } from 'uploadthing/next';
 
@@ -8,11 +9,15 @@ export const ourFileRouter = {
     .middleware(async (req) => {
       const user = await getToken({ req });
 
-      if (!user) throw new Error('Unauthorized');
+      if (!user) throw new Error('ไม่มีสิทธิ์ในการเข้าถึง');
 
       return { userId: user.id };
     })
-    .onUploadComplete(async ({ metadata, file }) => {}),
+    .onUploadComplete(async ({ metadata, file }) => {
+      // This code RUNS ON YOUR SERVER after upload
+      console.log("Upload complete for userId: ", metadata.userId)
+      console.log("File URL ", file.url)
+    }),
 } satisfies FileRouter;
 
 export type OurFileRouter = typeof ourFileRouter;
