@@ -43,7 +43,7 @@ function PostVoteShell() {
 }
 
 const SubRedditPostPage = async ({ params }: SubRedditPostPageProps) => {
-  console.log('params', params);
+  // console.log('params', params);
   const member = await redis.srandmember<string>('manotlj');
   try {
     const cachedPost = (await redis.hgetall(

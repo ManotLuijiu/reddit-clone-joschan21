@@ -30,16 +30,16 @@ const RCreatePage: React.FC<pageProps> = () => {
             if(err instanceof AxiosError) {
                 if(err.response?.status === 409) {
                     return toast({
-                        title: 'Subreddit already exists',
-                        description: 'Please choose a different subreddit name.',
+                        title: 'ชื่อกะทู้ซ้ำ',
+                        description: 'โปรดสร้างกะทู้ด้วยชื่อใหม่',
                         variant: 'destructive'
                     })
                 }
 
                 if (err.response?.status === 422) {
                     return toast({
-                        title: 'Invalid subreddit name.',
-                        description: 'Please choose a name between 3 and 21 letters',
+                        title: 'ชื่อกะทู้ไม่สั้นหรือยาวเกินไป',
+                        description: 'โปรดเลือกชื่อกะทู้ระหว่าง 3 และ 21 ตัวอักษร',
                         variant: 'destructive'
                     })
                 }
@@ -50,8 +50,8 @@ const RCreatePage: React.FC<pageProps> = () => {
             }
 
             toast({
-                title: 'There was an error',
-                description: 'Could not create subreddit',
+                title: 'เกิดปัญหาบางอย่าง',
+                description: 'ไม่สามารถสร้างกะทู้นี้ได้ โปรดติดต่อ manotlj@outlook.com',
                 variant: 'destructive'
             })
         },
