@@ -29,17 +29,17 @@ const SignIn: React.FC<SignInProps> = () => {
             ลงทะเบียน
           </Link>
         </p>
-        <div className="flex flex-col items-start justify-start italic text-orange-700 text-[0.875rem]">
+        <div className="flex flex-col items-start justify-start text-orange-700 text-[0.875rem]">
           <span>ช่วงทดสอบระบบให้ใช้:</span>
           <table className="table-fixed">
             <tbody>
               <tr>
                 <td className='text-start'>อีเมล:</td>
-                <td className="ml-4 text-start">esthete.test@gmail.com</td>
+                <td className="italic ml-4 text-start">esthete.test@gmail.com</td>
               </tr>
               <tr>
                 <td className="text-start">รหัสผ่าน:</td>
-                <td className="ml-4 text-start">Esthetein01</td>
+                <td className="italic ml-4 text-start">Esthetein01</td>
               </tr>
             </tbody>
           </table>
