@@ -2,7 +2,7 @@
 import CustomFeed from '@/components/homepage/CustomFeed';
 import GeneralFeed from '@/components/homepage/GeneralFeed';
 import { buttonVariants } from '@/components/ui/Button';
-import { Separator } from '@/components/ui/separator';
+// import { Separator } from '@/components/ui/separator';
 import { getAuthSession } from '@/lib/auth';
 import { Home as HomeIcon } from 'lucide-react';
 import Link from 'next/link';
@@ -23,7 +23,7 @@ export default async function Home() {
         {/* feed */}
         {/* @ts-expect-error server component */}
         {session ? <CustomFeed /> : <GeneralFeed />}
-        
+
         {/* subreddit info */}
         <div className="overflow-hidden h-fit rounded-lg border border-gold1 order-first md:order-last">
           <div className="bg-emerald-100 px-6 py-4">
@@ -50,7 +50,11 @@ export default async function Home() {
               สร้างกะทู้ บนเอสธีทบอร์ด
             </Link>
             {/* <Separator className='my-4' /> */}
-            <span className="mt-4 py-4 text-xs text-gray-900">สงวนลิขสิทธิ์ &copy; บริษัท เอสธีท อินเตอร์เนชั่นแนล จำกัด</span>
+            <div className="flex items-center justify-center">
+              <span className="mt-4 py-4 text-center text-xs text-gray-900">
+                สงวนลิขสิทธิ์ &copy;<br className="xl:hidden" /> <span>บริษัท เอสธีท อินเตอร์เนชั่นแนล จำกัด</span>
+              </span>
+            </div>
           </dl>
         </div>
       </div>

@@ -61,7 +61,7 @@ const RCreatePage: React.FC<pageProps> = () => {
   });
 
   return (
-    <div className="relative container flex items-center h-full max-w-3xl mx-auto">
+    <div className="relative lg:container flex items-center h-full max-w-3xl mx-auto">
       <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-50 animate-blob"></div>
       <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-2xl opacity-50 animate-blob animation-delay-2000"></div>
       <div className="absolute top-40 left-4 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-2xl opacity-50 animate-blob animation-delay-4000"></div>
@@ -75,8 +75,8 @@ const RCreatePage: React.FC<pageProps> = () => {
         <div>
           <p className="text-lg font-medium">ชื่อกะทู้</p>
           <p>
-            กรุณาใส่ชื่อกะทู้{' '}
-            <span className="text-sm italic text-orange-700">
+            กรุณาใส่ชื่อกะทู้{' '}<br className="md:hidden block" />
+            <span className="text-[0.857rem] italic text-orange-700">
               (***เมื่อกดปุ่มบันทึก ไม่สามารถแก้ไขชื่อได้)
             </span>
           </p>
